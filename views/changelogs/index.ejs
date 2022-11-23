@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
+  <!--  All snippets are MIT license http://bootdey.com/license -->
+  <title>Socket</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon_io/favicon-32x32.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+  pre {
+    margin: 10px;
+    border: 1px solid #d3d3d330;
+    background: #d3d3d380;
+  }
+
+  pre code {
+    text-align: left;
+    font-size: 87.5%;
+  }
+</style>
+
+<body>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css"
+    integrity="sha256-nwNjrH7J9zS/Ti4twtWX7OsC5QdQHCIKTv5cLMsGo68=" crossorigin="anonymous" />
+  <div class="container">
+    <div class="row justify-content-center">
+      <pre>
+      <b>Socket Connection URL : <%- baseUrl %></b>
+      On socket connection
+      Update user's online status
+      emit method: <b>UpdateStatusToOnline</b>
+      Request parameter: {senderId, receiverId}
+      Response Parameters: { senderId, isOnline }
+      --> Server will emit with method <b>statusOnline</b> with requested data
+
+      Create Room
+      emit method: <b>createRoom</b>
+      Request parameter: { senderId, receiverId }
+      Response Parameters: roomId 
+      --> Server will emit with method <b>roomConnected</b> with requested data
+
+      Send Message
+      emit method: <b>sendMessage</b>
+      Request parameter: { message, type: 0, senderId, receiverId, roomId  }
+      Response Parameters: { message, type: 0, senderId, receiverId, roomId, chatId }
+      --> Server will emit with method <b>newMessage</b> with requested data if opponent user is connected
+      Message types (0= Normal Message, 1= Audio, 2= Video, etc.)
+      => On newMessage
+        --> Acknowledgement to server back with method <b>ReadMessage</b>
+
+      Typing
+      emit method: typing
+      Request parameter: { senderId: senderId, receiverId: receiverId }
+      Response Parameters: { receiverId: receiverId }
+      --> Server will emit with method DisplayTyping with requested data if opponent user is connected
+
+      Remove Typing
+      emit method: removeTyping
+      Request parameter: { senderId: senderId, receiverId: receiverId }
+      Response Parameters: { receiverId: receiverId }
+      --> Server will emit with method removeTypingMessage with requested data if opponent user is connected
+
+      Get opponent user's online status
+      emit method: getOnlineStatus
+      Parameters: { senderId: senderId, receiverId: receiverId }
+      --> Aocket will Acknowledgement back with statusOnline method with data isOnline status and lastSeen status
+      </pre>
+    </div>
+    <!--end col-->
+  </div>
+  <!--end row-->
+
+
+  <style type="text/css">
+    body {
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+
+    .text-muted {
+      color: #8492a6 !important;
+    }
+
+    .bg-light {
+      background-color: #add8e624 !important;
+    }
+
+    ul {
+      list-style-position: outside
+    }
+
+    .text-success {
+      color: #0f84ab !important;
+    }
+  </style>
+
+  <script type="text/javascript">
+
+  </script>
+</body>
+
+</html>

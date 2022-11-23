@@ -1,0 +1,25 @@
+{
+  "rooms": [
+    {
+      "1": "e8PHHLoukcwDAduMAAAR",
+      "2": "BvWjISjwIMSFMw0FAAAT",
+      "senderId": "1",
+      "receiverId": "2",
+      "roomId": "FY9K45H734"
+    },
+    {
+      "2": "QKWYlY9pZZLm9S-sAAAL",
+      "4": "K829YsEMz2bbqO2BAAAJ",
+      "senderId": "4",
+      "receiverId": "2",
+      "roomId": "D24T5476Q4"
+    },
+    {
+      "1": "rmcHH1epxEug3Qa3AAAb",
+      "3": "rmyOzb4JtIs_6tMfAAAZ",
+      "senderId": "1",
+      "receiverId": "3",
+      "roomId": "LA5643GS84"
+    }
+  ]
+}
